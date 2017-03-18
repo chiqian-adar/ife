@@ -1,0 +1,17 @@
+$redcolor: #E53C3C;
+$blackfont: #534141;
+@mixin box {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+@mixin transition {
+    transition: 0.6s ease-in-out;
+    -moz-transition: 0.6s ease-in-out;
+    -webkit-transition: 0.6s ease-in-out;
+}
+@mixin shadow {
+    box-shadow: 0 0 5px #3f363f;
+    -moz-box-shadow: 0 0 5px #3f363f;
+    -webkit-box-shadow: 0 0 5px #3f363f;
+}

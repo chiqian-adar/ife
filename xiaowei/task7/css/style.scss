@@ -1,0 +1,751 @@
+@import "variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+body {
+    width: 100%;
+    min-width: 1280px;
+}
+//header
+header {
+    height: 60px;
+}
+.logo {
+    position: relative;
+    left: 6%;
+    float: left;
+    display: inline-block;
+    height: 60px;
+    width: 10%;
+    cursor: pointer;
+    text-align: center;
+    img {
+        position: relative;
+        top: 5px;
+        width: 25px;
+        height: 35px;
+    }
+    h1 {
+        margin-left: 3px;
+        display: inline-block;
+        font-size: 24px;
+        line-height: 60px;
+    }
+}
+nav {
+    position: relative;
+    left: 40%;
+    display: inline-block;
+    width: 30%;
+    height: 60px;
+    font-size: 0;
+    li {
+        display: inline-block;
+        height: 60px;
+        width: 20%;
+        cursor: pointer;
+        text-align: center;
+        font-size: 14px;
+        line-height: 60px;
+        &:hover {
+            color: $redcolor;
+        }
+        /*unline move*/
+        @for $i from 1 through 5 {
+            &:nth-of-type(#{$i}):hover~ .line {
+                left: 20% * ($i - 1);
+            }
+        }
+    }
+}
+.line {
+    position: absolute;
+    left: 0;
+    border-bottom: solid 4px $redcolor;
+    @include box;
+    @include transition;
+}
+.login {
+    position: absolute;
+    right: 50px;
+    display: inline-block;
+    width: 7%;
+    height: 60px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    line-height: 60px;
+    color: $redcolor;
+    background: url(../images/login.jpg) no-repeat center left;
+    background-size: 15px;
+
+    span:nth-of-type(2) {
+        position: absolute;
+        left: 25px;
+        display: inline-block;
+        height: 45px;
+        width: 0;
+        border-bottom: solid 2px $redcolor;
+        @include transition;
+    }
+
+    &:hover span:nth-of-type(2) {
+        width: 50%;
+    }
+}
+/*pic*/
+.pic {
+    width: 100%;
+    height: 650px;
+    background: url(../images/pic.jpg);
+    background-size: 100%;
+
+    div {
+        position: relative;
+        left: 120px;
+        top: 270px;
+        width: 466px;
+        height: 267px;
+        p{
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            font-size: 22px;
+            color: #fff;
+        }
+        p:nth-child(1) {
+            font: 60px Arial;
+            color: #fff;
+        }
+        span {
+            display: inline-block;
+            margin-top: 30px;
+            width: 300px;
+            height: 60px;
+            background: $redcolor;
+            text-align: center;
+            cursor: pointer;
+            font-size: 28px;
+            line-height: 60px;
+            font-weight: 700;
+            color: #fff;
+            @include transition;
+            &:hover {
+                background-color: #f40000;
+                border-radius: 5px;
+                color: #f6e5e5;
+            }
+        }
+    }
+}
+/*concept*/
+.concept {
+    font-size: 0;
+    div {
+        height: 240px;
+        display: inline-block;
+        width:25%;
+        text-align: center;
+        @include transition;
+        div:nth-of-type(2) {
+            width: 100%;
+            height: 50px;
+            border-right: solid 2px $blackfont;
+            font-size: 13px;
+            &:hover {
+                color: #be4f48;
+            }
+        }
+        @for $j from 1 through 4 {
+            .icon#{$j} {
+                width: 100%;
+                height: 130px;
+                line-height: 180px;
+                background: url(../images/icon#{$j}.jpg) no-repeat center;
+            }
+        }
+
+    }
+}
+/*mid*/
+.mid {
+    height: 400px;
+    background: #edeaea;
+    div {
+        height: 176px;
+        padding-top: 80px;
+        background: url(../images/logo.png) no-repeat center;
+    }
+    p {
+        text-align: center;
+        font-size: 50px;
+        font-weight: 900;
+        color: $blackfont;
+
+    }
+}
+/*map*/
+.map {
+    height: 380px;
+    background: url(../images/map.jpg) no-repeat;
+    background-size: cover;
+}
+.map-text {
+    padding-top: 80px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    p:nth-child(1) {
+        font-size: 22px;
+        &:hover+span{
+            width: 250px;
+        }
+    }
+    span {
+        display: inline-block;
+        width: 30px;
+        height: 10px;
+        margin-bottom: 20px;
+        border-bottom: solid 2px #fff;
+        @include transition;
+    }
+}
+.map-select {
+    text-align: center;
+    input {
+        position: relative;
+        z-index: 10;
+        width: 240px;
+        height: 36px;
+        margin-top: 50px;
+        margin-right: 20px;
+        cursor: pointer;
+        opacity: 0;
+        &:nth-child(4) {
+            vertical-align: top;
+            z-index: 0;
+        }
+    }
+}
+.options {
+    position: relative;
+    bottom: 40px;
+    height: 36px;
+    div {
+        position: relative;
+        display: inline-block;
+        width: 240px;
+        height: 36px;
+        margin-right: 20px;
+        border: solid 1px #C6B3AF;
+        @include box;
+        text-align: left;
+        font-size: 14px;
+        line-height: 36px;
+        color: #b3b3b3;
+        background: url(../images/input.png) no-repeat 210px #fff;
+        &:nth-child(4) {
+            padding-left: 35px;
+            vertical-align: bottom;
+            border: none;
+            cursor: pointer;
+            background: #be4f48;
+            background-image: none;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 40px;
+            @include transition;
+            &:hover {
+                background: #f44409;
+            }
+        }
+        span {
+            margin-left: 10px;
+        }
+        ul {
+            position: absolute;
+            width: 240px;
+            right: -2px;
+            top: 34px;
+            @include box;
+            z-index: 2;
+            li {
+                display: none;
+                height: 36px;
+                padding-left: 40px;
+                background: #e3e3e5;
+                &:hover {
+                    background: url(../images/input.png) no-repeat 10px #bf4e48;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}
+/*when input is checked*/
+@for $k from 1 to 4 {
+    .map-select input:nth-child(#{$k}):checked~ .options div:nth-child(#{$k}) {
+        border: solid 2px #ae7271;
+        border-bottom: 0;
+        ul {
+            border: 2px solid #ae7271;
+            border-top: 0;
+            li{
+                display: block;
+            }
+        }
+
+    }
+}
+/*gallery*/
+.gallery {
+    height: 500px;
+    text-align: center;
+    font-size: 0;
+    background: #edeaea;
+}
+.cell{
+    position: relative;
+    top: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    height: 420px;
+}
+@for $l from 1 to 5 {
+    .img#{$l} {
+        width: 100%;
+        height: 340px;
+        background: url(../images/img#{$l}.jpg) no-repeat center;
+    }
+}
+.mess {
+    width: 100%;
+    height: 80px;
+    @include box;
+    padding-top: 20px;
+    p:nth-child(1) {
+        font-size: 14px;
+        color: #44403f;
+    }
+    p:nth-child(2) {
+        margin: 10px;
+        font-size: 12px;
+        color: #b3afac;
+    }
+}
+.cell:nth-child(2) p:nth-child(1) {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 30px;
+}
+
+/*world*/
+.world {
+    height: 560px;
+    font-size: 0;
+}
+.world-left {
+    position: relative;
+    display: inline-block;
+    width: 68%;
+    height: 560px;
+    text-align: center;
+    background: url(../images/world.jpg);
+    background-size: cover;
+    p {
+        font-size: 22px;
+        color: #fff;
+        &:nth-child(1) {
+            margin-top: 140px;
+            font-size: 50px;
+            line-height: 50px;
+        }
+        &:nth-child(2) {
+            font-size: 150px;
+            line-height: 150px;
+        }
+        &:nth-child(3) {
+            margin-bottom: 5px;
+        }
+    }
+}
+.triangle {
+    position: absolute;
+    right: 0;
+    top: 270px;
+    width: 0;
+    height: 0;
+    border-width: 25px 25px 25px 0;
+    border-color: transparent #fff;
+    border-style: solid;
+
+}
+.world-right {
+    display: inline-block;
+    vertical-align: top;
+    height: 560px;
+    width: 32%;
+    text-align: center;
+}
+.intro {
+    text-align: center;
+    div {
+        display: none;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 180px;
+        p:nth-child(1) {
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: 900;
+            span {
+                color: #be4f48;
+            }
+        }
+        p:nth-child(2) {
+            text-align: left;
+            font-size: 14px;
+            line-height: 25px;
+            color: #b3afac;
+        }
+    }
+}
+.intro .intro1 {
+    display: block;
+}
+.world .more {
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 35px;
+    background: #fff;
+    cursor: pointer;
+    border: solid 1px #be4f48;
+    color: #be4f48;
+    @include transition;
+    &:hover {
+        background: #be4f48;
+        color: #fff;
+        border-radius: 3px;
+    }
+}
+.check {
+    margin-top: 25px;
+    input {
+        position: relative;
+        margin: 0 4px;
+        z-index: 2;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+.check-bg {
+    position: relative;
+    bottom: 13px;
+    div {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        border-radius: 5px;
+        border: solid 1px #6c5c5c;
+    }
+}
+
+/*change pages*/
+/*Where is the wrong  has checked a long time QAQ. */
+@for $i from 1 through 3 {
+    .check input:nth-child(#{$i}):checked~ .check-bg div:nth-child(#{$i}) {
+        background: #6c5c5c;
+    }
+    .check input:nth-child(#{$i}):checked~ .intro .intro#{$i} {
+        display: block;
+    }
+}
+/*time*/
+.time {
+    font-size: 0;
+    height: 520px;
+}
+.time-left {
+    display: inline-block;
+    width: 68%;
+    height: 520px;
+}
+.box-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    background: #e84e4c;
+}
+.box-right {
+    float: right;
+    width: 50%;
+    height: 100%;
+    color: #e84e4c;
+    background: #fff;
+}
+/*common*/
+.time-text {
+    margin-top: 190px;
+    text-align: center;
+    p {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    span {
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        margin-top: 5px;
+        border-top: solid 2px;
+        @include transition;
+        &:hover {
+            width: 200px;
+        }
+    }
+}
+.time-btn {
+    margin: 10px auto;
+    width: 150px;
+    height: 40px;
+    border: solid 1px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    cursor: pointer;
+    @include transition;
+}
+/*different*/
+.box-left .time-btn:hover {
+    background: #fff;
+    border-radius: 3px;
+    color: #e84e4c;
+}
+.box-right .time-btn:hover {
+    background: #e84e4c;
+    border-radius: 3px;
+    color: #fff;
+}
+.box-right span {
+    border-color: #adadad;
+}
+.time-right {
+    display: inline-block;
+    width: 32%;
+    height: 520px;
+    background: url(../images/time.jpg);
+    background-size: cover;
+}
+/*joinus*/
+.joinus {
+    height: 800px;
+    text-align: center;
+    font-size: 0;
+}
+.joinus-top {
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    p:nth-child(1) {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    p:nth-of-type(2) {
+        font-size: 14px;
+        line-height: 20px;
+        color: #b3afac;
+    }
+    span {
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        margin-top: 15px;
+        border-top: solid 2px #e44f4b;
+        @include transition;
+        &:hover {
+            width: 200px;
+        }
+    }
+}
+.joinus-bottom {
+    height: 400px;
+    font-size: 0;
+}
+.joinus-left {
+    display: inline-block;
+    width: 35%;
+    div {
+        float: right;
+        width: 350px;
+        height: 130px;
+        font-size: 14px;
+        text-align: left;
+        color: #b3afac;
+        p:first-child {
+            font-size: 16px;
+            color: #6c5c5c;
+            margin-bottom: 15px;
+        }
+        p:nth-of-type(2) {
+            margin-bottom: 15px;
+        }
+        span {
+            float: right;
+            font-size: 14px;
+            cursor: pointer;
+            color: #b3afac;
+        }
+    }
+}
+.joinus-right {
+    vertical-align: top;
+    display: inline-block;
+    width: 65%;
+    form {
+    padding-right: 100px;
+    }
+    input {
+        width: 300px;
+        height: 40px;
+        margin: 10px;
+        padding: 10px;
+        border: 0;
+        @include box;
+        background-color: #e3e3e3;
+        color: #4e3a4f;
+        &:focus {
+            border: solid 1px #e3e3e3;
+            background: #fff;
+        }
+    }
+    textarea {
+        width: 620px;
+        height: 160px;
+        margin: 10px;
+        padding: 10px;
+        border: 0;
+        resize: none;
+        @include box;
+        color: #4e3a4f;
+        background-color: #e3e3e3;
+        &:focus {
+            border: solid 1px #e3e3e3;
+            background: #fff;
+        }
+    }
+    input[type="submit"] {
+        width: 620px;
+        cursor: pointer;
+        @include transition;
+        &:hover {
+            border-radius: 3px;
+            @include shadow;
+        }
+    }
+}
+/*contact*/
+.contact {
+    height: 400px;
+    background-color: #33363f;
+    text-align: center;
+}
+.contact-mess {
+    height: 230px;
+    color: #f7f8fc;
+    p {
+        font-size: 14px;
+        margin: 10px;
+        line-height: 23px;
+    }
+    p:first-child {
+        font-size: 20px;
+        padding: 100px 0 10px 0;
+    }
+}
+.contact-email {
+    height: 40px;
+    font-size: 0;
+    input[type="text"] {
+        display: inline-block;
+        vertical-align: top;
+        width: 500px;
+        height: 40px;
+        padding-left: 10px;
+        border: 0;
+        @include box;
+    }
+    input[type="submit"] {
+        display: inline-block;
+        border: 0;
+        width: 100px;
+        height: 40px;
+        background: #75757f;
+        color: #fff;
+        letter-spacing: 4px;
+        @include transition;
+        cursor: pointer;
+        &:hover {
+            background: #5e5e68;
+        }
+    }
+}
+.contact-icon {
+    background: url(../images/icons.png) no-repeat center;
+    margin-top: 30px;
+    height: 50px;
+    div {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+}
+footer {
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    background: #30303a;
+    span {
+        float: left;
+        width: 300px;
+        height: 60px;
+        font-size: 10px;
+        line-height: 60px;
+        text-align: center;
+        &:last-child {
+            float: right;
+            a {
+                color: #fff;
+                @include transition;
+                &:hover {
+                    color: #75757f;
+                }
+            }
+        }
+    }
+    p {
+        display: inline-block;
+        height: 60px;
+        font-size: 12px;
+        line-height: 60px;
+    }
+}
