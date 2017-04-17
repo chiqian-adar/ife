@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+ }
+ #select {
+     display: flex;
+     justify-content: center;
+ }
+ #select input {
+     margin: 30px;
+ }
+ #root {
+     width: 1150px;
+     margin: 35px auto;
+     border: solid 1px #000;
+ }
+ #root div {
+     display: flex;
+     flex-grow: 1;
+     margin: 20px;
+     border: solid 1px #000;
+ }
