@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    display: -ms-flexbox;  /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex;         /* 新版本语法: Opera 12.1, Firefox 22+ */
+
+    flex-flow: row wrap-reverse;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+
+    margin: 100px 50px;
+    padding: 20px;
+    border: solid 1px #663366;
+}
+.content div {
+    padding: 20px;
+    width: 150px;
+    box-sizing: border-box;
+    border: solid 1px #f00;
+}
+.content div:nth-child(1) {
+    height: 120px;
+}
+.content div:nth-child(2) {
+    height: 100px;
+}
+.content div:nth-child(3) {
+    height: 40px;
+}
+.content div:nth-child(4) {
+    height: 200px;
+    border-color: #0f0;
+}
+
+@media screen and (max-width: 640px) {
+    .content {
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-align-items: flex-start;
+
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        -ms-justify-content: space-around;
+    }
+    .content div:nth-child(4) {
+        order: -1;
+        -webkit-order: -1;
+        -ms-order: -1;
+    }
+}
