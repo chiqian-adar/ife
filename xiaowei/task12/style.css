@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /*width: 300px;*/
+    /*margin: 50px auto;*/
+}
+.list table {
+    width: 300px;
+}
+.list th {
+    color: #fff;
+    background: #000;
+}
+.list tr:nth-child(odd) {
+    background: #ccc;
+}
+.list tr:nth-child(3),
+.list tr:nth-child(2),
+.list tr:nth-child(4) {
+    color: #cb524a;
+}
+
+.myinput {
+    width: 300px;
+    margin: 50px;
+}
+.myinput input {
+    width: 150px;
+    border:solid 1px #ddd;
+    transition: 0.6s ease-in-out;
+    -moz-transition: 0.6s ease-in-out;
+    -webkit-transition: 0.6s ease-in-out;
+}
+.myinput input:focus {
+    width: 200px;
+}
+.banner {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+}
+.banner li {
+    list-style: none;
+}
+.change-color {
+    position: relative;
+    /*left: 0;*/
+    width: 1000px;
+    height: 150px;
+    font-size: 0;
+    transition: 0.6s ease-in-out;
+    -moz-transition: 0.6s ease-in-out;
+    -webkit-transition: 0.6s ease-in-out;
+}
+.change-color div{
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+}
+.btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 30px;
+}
+.btn a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background: rgba(220, 216, 214, 0.57);
+}
+.color1 {
+    background: #CC3333;
+}
+.color2 {
+    background: #FFCCCC;
+}
+.color3 {
+    background: #99CC00;
+}
+#sider1:target~.change-color {
+    left: 0
+}
+#sider2:target~.change-color {
+    left: -100%;
+}
+#sider3:target~.change-color {
+    left: -200%;
+}
